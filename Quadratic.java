@@ -3,13 +3,19 @@
  * This program calculates the real (non-imaginary) roots of
  * a quadratic equation.
  * @author Dinh Nguyen
- * @version 2021-02-01
+ * @version 2021-01-31
  */
 
 import java.util.Scanner;
 
 public class Quadratic
 {
+
+    public static double discriminant(double a, double b, double c)
+    {
+        return b * b - 4 * a * c;
+    }
+
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
@@ -21,10 +27,19 @@ public class Quadratic
         double b = in.nextDouble();
         System.out.print("Enter c: ");
         double c = in.nextDouble();
-        double root1 = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
-        double root2 = (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a);
-        System.out.println("The roots are:");
-        System.out.println(root1);
-        System.out.println(root2);
+        double disc = discriminant(a, b, c);
+        if (disc > 0)
+        {
+            System.out.println((-b + Math.sqrt(disc)) / (2 * a));
+            System.out.println((-b - Math.sqrt(disc)) / (2 * a));
+        }
+        else if (disc == 0)
+        {
+            System.out.println((-b + Math.sqrt(disc)) / (2 * a));
+        }
+        else
+        {
+            System.out.println("No real solutions for this equation.");
+        }
     }
 }
