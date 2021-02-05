@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Craps here.
+ * This is a dice based program where a user is asked if they want to play
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Emma Cadogan
+ * @version February 5th 2021
  */
 import java.util.Scanner;  
 import java.util.Random;
